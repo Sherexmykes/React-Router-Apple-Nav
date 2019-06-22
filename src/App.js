@@ -11,4 +11,18 @@ class App extends Component {
     }
   
     componentDidMount() {
-      this.setState({data: dummy
+      this.setState({data: dummyData});
+    }
+      render() {
+        return (
+          <div className="App">
+            <Route path="/" component={NavWrapper} />
+            <Route
+              path="/"
+              render={props => <NavWrapper {...props} data={this.state.data} />}
+            />
+          </div>
+        );
+      }
+    }
+      export default App;
